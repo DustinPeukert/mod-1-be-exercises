@@ -38,37 +38,37 @@ RSpec.describe 'Strings' do
     expect(actual).to eq(expected)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
-    actual = word.______
+    actual = word.gsub('t','k')
     expected = "kicking"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
-    actual = word.______
+    actual = word.gsub('tick','clock')
     expected = "clocking"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     words = "five sleepy kittens"
     # In place of the line below, call a method to achieve the expected output.
-    actual = words.______
+    actual = words.gsub('e', '*')
     expected = "fiv* sl**py kitt*ns"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     greeting = "Hello!!"
     # In place of the line below, call a method to achieve the expected output.
-    actual = greeting._____
+    actual = greeting.chop
     expected = "Hello!"
 
     expect(actual).to eq(expected)
