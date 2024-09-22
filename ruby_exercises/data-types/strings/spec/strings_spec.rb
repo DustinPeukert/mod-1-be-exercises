@@ -197,7 +197,7 @@ RSpec.describe 'Strings' do
   it 'test 22' do
     greeting = "Hello World, my name is"
     name = "Harry Potter"
-    actual = greeting.concat(' ', name)
+    actual = greeting << " " << name
     expected = "Hello World, my name is Harry Potter"
 
     expect(actual).to eq(expected)
