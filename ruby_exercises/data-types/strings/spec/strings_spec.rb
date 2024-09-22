@@ -74,37 +74,37 @@ RSpec.describe 'Strings' do
     expect(actual).to eq(expected)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     greeting = "Hello!!\n"
     # In place of the line below, call a method to achieve the expected output.
-    actual = greeting._____
+    actual = greeting.chop
     expected = "Hello!!"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     greeting = "Hello!!\n\n"
     # In place of the line below, call a method to achieve the expected output.
-    actual = greeting._____
+    actual = greeting.chop
     expected = "Hello!!\n"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 11' do
+  it 'test 11' do
     rhyme = "eeny, meeny, miny, moe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = rhyme._____
+    actual = rhyme.delete('e')
     expected = "ny, mny, miny, mo"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 12' do
+  it 'test 12' do
     rhyme = "eeny, meeny, miny, moe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = rhyme._____
+    actual = rhyme.delete('eio')
     expected = "ny, mny, mny, m"
 
     expect(actual).to eq(expected)
