@@ -1,41 +1,42 @@
+require 'rspec'
 
 RSpec.describe 'Arrays' do
   it 'test 0' do
     # in the line below, create a new empty array
 
-    empty = ______
+    empty = []
     expect(empty).to eq([])
   end
 
-  xit 'test 1' do
+  it 'test 1' do
     # in the line below, create an array with the numbers 1 through 5
-    nums = _____
+    nums = [1, 2, 3, 4, 5]
 
     expect(nums).to eq([1,2,3,4,5])
   end
 
-  xit 'test 2' do
+  it 'test 2' do
     # in the line below, call a method on the nums variable
     # defined above to access the second element
 
     nums = [1,2,3]
-    actual = nums.____
+    actual = nums.at(1)
 
     expected = 2
     expect(actual).to eq(expected)
   end
 
-  xit 'test 2-2' do
+  it 'test 2-2' do
     # In the line below, call a method on the nums variable
     # defined above to access the last element
     nums = [1,2,3]
-    actual = nums
+    actual = nums.at(2)
     expected = 3
     expect(actual).to eq(expected)
 
     # Now try to find another way to achieve the same effect
     nums = [1,2,3]
-    actual = nums
+    actual = nums.last
     expected = 3
     expect(actual).to eq(expected)
   end
