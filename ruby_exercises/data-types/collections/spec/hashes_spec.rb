@@ -47,27 +47,27 @@ RSpec.describe 'Hashes' do
     expect(ingredients[:carrots]).to eq(7)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     # In the line below, create a new hash with
     # default values of zero.
-    ingredients = ______
+    ingredients = Hash.new(0)
 
     expect(ingredients["tomatoes"]).to eq(0)
     expect(ingredients[:carrots]).to eq(0)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
     }
     # Using the books hash defined above,
     # access the value "Grapes of Wrath"  in the line below
-    grapes = ______
+    grapes = books["John Steinbeck"]
     expect(grapes).to eq("Grapes of Wrath")
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
@@ -76,7 +76,7 @@ RSpec.describe 'Hashes' do
     # add a new key of "Ernest Hemmingway"
     # with a value of "For Whom the Bell Tolls"
     # in the line below
-    ______
+    books["Ernest Hemmingway"] = "For Whom the Bell Tolls"
     expected = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird",
@@ -85,7 +85,7 @@ RSpec.describe 'Hashes' do
     expect(books).to eq(expected)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
@@ -93,7 +93,7 @@ RSpec.describe 'Hashes' do
     # Using the books hash defined above,
     # change the value associated with
     # "John Steinbeck" to "Of Mice and Men"
-    ______
+    books["John Steinbeck"] = "Of Mice and Men"
     expected = {
       "John Steinbeck" => "Of Mice and Men",
       "Harper Lee" => "To Kill a Mockingbird"
@@ -101,14 +101,14 @@ RSpec.describe 'Hashes' do
     expect(books).to eq(expected)
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
     }
     # Using the books hash defined above,
     # delete the key "Harper Lee"
-    ______
+    books.delete("Harper Lee")
     expected = {
       "John Steinbeck" => "Grapes of Wrath"
     }
