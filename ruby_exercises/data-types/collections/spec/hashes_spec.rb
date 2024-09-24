@@ -1,47 +1,47 @@
 RSpec.describe 'Hashes' do
   it 'test 1' do
     # In the line below, create a new empty hash called empty
-    empty = ______
+    empty = {}
     expect(empty).to eq({})
   end
 
-  xit 'test 2' do
+  it 'test 2' do
     # In the line below, create an empty hash with a default value 0
-    empty = ______
+    empty = Hash.new(0)
     expect(empty[:not_found]).to eq(0)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     # In the line below, create a hash called ages. The hash should
     # have a key of "ben" with a value of 4 and a key of "kelly" with
     # a value of 6
-    ages = ______
+    ages = { 'ben' => 4, 'kelly' => 6 }
     expect(ages.length).to eq(2)
     expect(ages["ben"]).to eq(4)
     expect(ages["kelly"]).to eq(6)
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     # In the line below, create a hash called ages. The hash should
     # have a key of :ben with a value of 4 and a key of :kelly with
     # a value of 6.
-    ages = ______
+    ages = { ben: 4, kelly: 6 }
     expect(ages.length).to eq(2)
     expect(ages[:ben]).to eq(4)
     expect(ages[:kelly]).to eq(6)
 
     # There are two different syntaxes for doing this. Use the other way to
     # achieve the same result
-    ages = ______
+    ages = {:ben => 4, :kelly => 6}
     expect(ages.length).to eq(2)
     expect(ages[:ben]).to eq(4)
     expect(ages[:kelly]).to eq(6)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     # In the line below, create a new hash called ingredients.
     # Create a "tomatoes" key and a :carrots key with the corresponding values.
-    ingredients = ______
+    ingredients = { "tomatoes" => 3, carrots: 7 }
 
     expect(ingredients["tomatoes"]).to eq(3)
     expect(ingredients[:carrots]).to eq(7)
