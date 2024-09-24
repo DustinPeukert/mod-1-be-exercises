@@ -186,7 +186,7 @@ RSpec.describe 'Hashes' do
     expect(ages["Julio"]).to eq(9)
   end
 
-  xit 'test 16' do
+  it 'test 16' do
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -194,11 +194,11 @@ RSpec.describe 'Hashes' do
     }
     # Using the ages hash defined above
     # get an array of all the names
-    names = ______
+    names = ages.keys
     expect(names).to eq([:Jimmy, :Julio, :Juliet])
   end
 
-  xit 'test 17' do
+  it 'test 17' do
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -206,11 +206,11 @@ RSpec.describe 'Hashes' do
     }
     # Using the ages hash defined above
     # get an array of all the ages
-    age_list = ______
+    age_list = ages.values
     expect(age_list).to eq([4, 8, 9])
   end
 
-  xit 'test 18' do
+  it 'test 18' do
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -218,11 +218,11 @@ RSpec.describe 'Hashes' do
     }
     # Using the ages hash defined above
     # find the number of key/value pairs
-    num_pairs = ______
+    num_pairs = ages.size
     expect(num_pairs).to eq(3)
   end
 
-  xit 'test 19' do
+  it 'test 19' do
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -230,16 +230,16 @@ RSpec.describe 'Hashes' do
     }
     # Call a method on the ages hash defined above
     # to figure out if :Jimmy is a key
-    jimmy_in_hash = ______
+    jimmy_in_hash = ages.key?(:Jimmy) # can also use .has_key? as they function the same
     expect(jimmy_in_hash).to eq(true)
 
     # Now figure out if :Jackie is in the hash
 
-    jackie_in_hash = ______
+    jackie_in_hash = ages.include?(:Jackie)
     expect(jackie_in_hash).to eq(false)
   end
 
-  xit 'test 20' do
+  it 'test 20' do
     ages = {
       Jimmy: 4,
       Julio: 8,
@@ -247,7 +247,7 @@ RSpec.describe 'Hashes' do
     }
     # Call a method on the ages hash defined above
     # to make the keys the values and vice versa
-    opposite = _____
+    opposite = ages.invert
     expected = {
       4 => :Jimmy,
       8 => :Julio,
