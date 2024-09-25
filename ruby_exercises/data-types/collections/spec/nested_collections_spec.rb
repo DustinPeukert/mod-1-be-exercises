@@ -47,7 +47,7 @@ RSpec.describe 'Nested Collections' do
     expect(coordinates).to eq(expected)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -55,12 +55,12 @@ RSpec.describe 'Nested Collections' do
     }
     # Using the team variable defined above
     # retrieve all of the pitchers
-    pitchers = _________
+    pitchers = team[:pitchers]
     expected = ["Kenny", "Joan", "Shabaz"]
     expect(pitchers).to eq(expected)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -68,7 +68,7 @@ RSpec.describe 'Nested Collections' do
     }
     # Using the team variable defined above
     # add "Phil" as a pitcher
-    __________
+    team[:pitchers].push("Phil")
 
     expected = {
       pitchers: ["Kenny", "Joan", "Shabaz", "Phil"],
@@ -78,7 +78,7 @@ RSpec.describe 'Nested Collections' do
     expect(team).to eq(expected)
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -87,7 +87,7 @@ RSpec.describe 'Nested Collections' do
     # Using the team variable defined above
     # create a new key :coaches with the value
     # of an empty array
-    _________
+    team[:coaches] = []
 
     expected = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
@@ -98,7 +98,7 @@ RSpec.describe 'Nested Collections' do
     expect(team).to eq(expected)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -106,11 +106,11 @@ RSpec.describe 'Nested Collections' do
     }
     # Using the team variable defined above
     # Find out how many fielders there are
-    num_fielders = ________
+    num_fielders = team[:fielders].size
     expect(num_fielders).to eq(5)
   end
 
-  xit 'test 10' do
+  it 'test 10' do
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -118,7 +118,7 @@ RSpec.describe 'Nested Collections' do
     }
     # Using the team variable defined above
     # Find out if "Kenny" is a pitcher
-    kenny_is_pitcher = ________
+    kenny_is_pitcher = team[:pitchers].include?("Kenny")
     expect(kenny_is_pitcher).to eq(true)
   end
 
