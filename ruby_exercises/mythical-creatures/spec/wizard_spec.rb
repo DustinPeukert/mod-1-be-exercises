@@ -1,5 +1,5 @@
 require 'rspec'
-require './lib/wizard'
+require '../lib/wizard'
 
 RSpec.describe Wizard do
   it 'has a name' do
