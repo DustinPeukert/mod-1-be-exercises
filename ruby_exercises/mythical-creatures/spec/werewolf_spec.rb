@@ -1,5 +1,5 @@
 require 'rspec'
-require './lib/werewolf'
+require '../lib/werewolf'
 
 RSpec.describe Werewolf do
   it 'has a name' do
