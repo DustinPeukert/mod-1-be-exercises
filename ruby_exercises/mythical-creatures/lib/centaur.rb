@@ -23,35 +23,21 @@ class Centaur
     end
 
     def shoot
-        if !@laying
-            if !@cranky
-                @exhaustion += 1
-
-                if @exhaustion >= 3
-                    @cranky = true
-                end
-
-                'Twang!!!'
-            else
-                'NO!'
-            end
-        else
-            'NO!'
-        end
+        return 'NO!' if @laying || @cranky
+      
+        @exhaustion += 1
+        @cranky = true if @exhaustion >= 3
+      
+        'Twang!!!'
     end
 
     def run
-        if !@laying
-            @exhaustion += 1
-
-            if @exhaustion >= 3
-                @cranky = true
-            end
-
-            'Clop clop clop clop!'
-        else
-            'NO!'
-        end
+        return 'NO!' if @laying
+      
+        @exhaustion += 1
+        @cranky = true if @exhaustion >= 3
+      
+        'Clop clop clop clop!'
     end
 
     def lay_down
@@ -65,25 +51,18 @@ class Centaur
     end
 
     def sleep
-        if !@standing
-            @exhaustion = 0
-            @cranky = false
-        else
-            'NO!'
-        end
+        return 'NO!' if @standing
+      
+        @exhaustion = 0
+        @cranky = false
     end
 
     def drink_potion
-        if !@laying
-            if !@cranky
-                'Bleghhhh'
-            else
-                @exhaustion = 0
-                @cranky = false
-            end
-        else
-            'NO!'
-        end
+        return 'NO!' if @laying
+        return 'Bleghhhh' unless @cranky
+      
+        @exhaustion = 0
+        @cranky = false
     end
 
 end
