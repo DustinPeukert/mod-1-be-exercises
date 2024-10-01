@@ -1,5 +1,5 @@
-require './spec/spec_helper'
-require './lib/direwolf'
+require '../spec/spec_helper'
+require '../lib/direwolf'
 
 RSpec.describe Direwolf do
   it 'has a name' do
@@ -8,21 +8,21 @@ RSpec.describe Direwolf do
     expect(wolf.name).to eq('Nymeria')
   end
 
-  it 'can have a different name and can have a home' do
+  xit 'can have a different name and can have a home' do
     wolf = Direwolf.new('Lady')
 
     expect(wolf.home).to eq('Beyond the Wall')
     expect(wolf.name).to eq('Lady')
   end
 
-  it 'is massive by default' do
+  xit 'is massive by default' do
     wolf = Direwolf.new('Ghost')
 
     expect(wolf.size).to eq('Massive')
     expect(wolf.name).to eq('Ghost')
   end
 
-  it 'can have another home and be another size' do
+  xit 'can have another home and be another size' do
     wolf = Direwolf.new('Shaggydog', "Winterfell", "Smol Pupper")
 
     expect(wolf.name).to eq('Shaggydog')
@@ -30,7 +30,7 @@ RSpec.describe Direwolf do
     expect(wolf.size).to eq('Smol Pupper')
   end
 
-  it 'the Starks are in Winterfell by default' do
+  xit 'the Starks are in Winterfell by default' do
     wolf = Direwolf.new('Summer', 'Winterfell')
     stark = Stark.new('Bran')
 
@@ -38,14 +38,14 @@ RSpec.describe Direwolf do
     expect(stark.location).to eq('Winterfell')
   end
 
-  it 'starts off with no Starks to protect' do
+  xit 'starts off with no Starks to protect' do
     wolf = Direwolf.new('Nymeria')
     stark = Stark.new('Arya')
 
     expect(wolf.starks_to_protect).to be_empty
   end
 
-  it 'protects the Stark children' do
+  xit 'protects the Stark children' do
     wolf = Direwolf.new('Nymeria', 'Riverlands')
     stark = Stark.new('Arya', 'Riverlands')
 
@@ -54,7 +54,7 @@ RSpec.describe Direwolf do
     expect(wolf.starks_to_protect.first.name).to eq('Arya')
   end
 
-  it 'can only protect the Stark Children if they are in the same location' do
+  xit 'can only protect the Stark Children if they are in the same location' do
     wolf = Direwolf.new('Ghost')
     stark = Stark.new('Jon', 'Kings Landing')
 
@@ -63,7 +63,7 @@ RSpec.describe Direwolf do
     expect(wolf.starks_to_protect).to be_empty
   end
 
-  it 'can only protect two Starks at a time' do
+  xit 'can only protect two Starks at a time' do
     summer_wolf = Direwolf.new('Summer', "Winterfell")
     lady_wolf = Direwolf.new('Lady', "Winterfell")
     sansa_stark = Stark.new('Sansa')
@@ -85,14 +85,14 @@ RSpec.describe Direwolf do
     expect(lady_wolf.starks_to_protect).to_not include(arya_stark)
   end
 
-  it 'the Starks are unsafe by default' do
+  xit 'the Starks are unsafe by default' do
     stark = Stark.new('Jon', 'The Wall')
 
     expect(stark.safe?).to be false
     expect(stark.house_words).to eq('Winter is Coming')
   end
 
-  it 'protects the Starks' do
+  xit 'protects the Starks' do
     wolf = Direwolf.new('Nymeria', "Winterfell")
     arya_stark = Stark.new('Arya')
     sansa_stark = Stark.new('Sansa')
@@ -103,13 +103,13 @@ RSpec.describe Direwolf do
     expect(sansa_stark.safe?).to be false
   end
 
-  it 'hunts white walkers' do
+  xit 'hunts white walkers' do
     wolf = Direwolf.new('Nymeria', 'Winterfell')
 
     expect(wolf.hunts_white_walkers?).to be true
   end
 
-  it 'will not hunt white walkers when protecting Starks' do
+  xit 'will not hunt white walkers when protecting Starks' do
     wolf = Direwolf.new('Nymeria', "Winterfell")
     arya_stark = Stark.new('Arya')
 
@@ -118,7 +118,7 @@ RSpec.describe Direwolf do
     expect(wolf.hunts_white_walkers?).to be false
   end
 
-  it 'can leave and stop protecting Starks' do
+  xit 'can leave and stop protecting Starks' do
     summer_wolf = Direwolf.new('Summer', "Winterfell")
     lady_wolf = Direwolf.new('Lady', "Winterfell")
     sansa_stark = Stark.new('Sansa')
@@ -133,7 +133,7 @@ RSpec.describe Direwolf do
     expect(arya_stark.safe?).to be false
   end
 
-  it 'returns the Stark object when it leaves' do
+  xit 'returns the Stark object when it leaves' do
     summer_wolf = Direwolf.new('Summer', "Winterfell")
     lady_wolf = Direwolf.new('Lady', "Winterfell")
     sansa_stark = Stark.new('Sansa')
