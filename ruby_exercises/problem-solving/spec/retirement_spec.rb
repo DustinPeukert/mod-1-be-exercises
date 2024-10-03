@@ -1,4 +1,4 @@
-require "./lib/retirement"
+require "../lib/retirement"
 
 RSpec.describe Retirement do
 
@@ -30,7 +30,12 @@ RSpec.describe Retirement do
   end
 
   it 'errors with a negative retirement age' do
-    # write your test here
+    retire = Retirement.new
+
+    result = retire.calculate(53, 43)
+    expected = "Error. You're already retired!"
+
+    expect(result).to eq(expected)
   end
 end
 
