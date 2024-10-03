@@ -1,6 +1,5 @@
 require 'rspec'
 require '../lib/dish'
-require '../lib/potluck'
 
 describe Dish do
     describe '#initialize' do
