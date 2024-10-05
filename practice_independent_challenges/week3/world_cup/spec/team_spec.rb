@@ -25,26 +25,30 @@ describe Team do
     end
   end
 
-  describe 'Player Integration' do
-    it 'can add players' do
-      mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
-      pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
+  describe 'Instance Methods' do
+    describe '#add_player' do
+      it 'can add players' do
+        mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
+        pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
 
-      @team.add_player(mbappe)
-      @team.add_player(pogba)
+        @team.add_player(mbappe)
+        @team.add_player(pogba)
 
-      expect(@team.players).to eq([mbappe, pogba])
+        expect(@team.players).to eq([mbappe, pogba])
+      end
     end
 
-    it 'returns all players of a specific position' do
-      mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
-      pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
+    describe '#players_by_position' do
+      it 'returns all players of a specific position' do
+        mbappe = Player.new({name: "Kylian Mbappe", position: "forward"})
+        pogba = Player.new({name: "Paul Pogba", position: "midfielder"})
 
-      @team.add_player(mbappe)
-      @team.add_player(pogba)
+        @team.add_player(mbappe)
+        @team.add_player(pogba)
 
-      expect(@team.players_by_postion("midfielder")).to eq([pogba])
-      expect(@team.players_by_postion("defender")).to eq([])
+        expect(@team.players_by_postion("midfielder")).to eq([pogba])
+        expect(@team.players_by_postion("defender")).to eq([])
+      end
     end
   end
 end

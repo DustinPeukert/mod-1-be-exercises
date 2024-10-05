@@ -22,7 +22,7 @@ describe WorldCup do
         @world_cup = WorldCup.new(2018, [@france, @croatia])
     end
 
-    describe 'Object' do
+    describe '#initialize' do
         it 'is a WorldCup' do
             expect(@world_cup).to be_a(WorldCup)
         end
